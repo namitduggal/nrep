@@ -1,0 +1,20 @@
+<div class="login-page">
+  <div class="container"> 
+    <h3 class="w3ls-title w3ls-title1">Order Details</h3>  
+    <div class="login-body">
+      Order ID :- {{oid}}<br/>
+      Current Status:- {{currst}}<br/>
+      Choose New Status <select name="st" [(ngModel)]="nst">
+        <option value="">Choose</option>
+        <option>Shipped</option>
+        <option>Cancelled</option>
+        <option>In-Transit</option>
+        <option>Delivered</option>
+        <option>Delayed</option>
+        <option>Returned</option>
+      </select><br/>
+      <input type="button" name="s1" (click)="updatestatus()" value="Update"><br/>
+      {{msg}}
+    </div>
+  </div>
+</div>

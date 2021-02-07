@@ -1,0 +1,24 @@
+<!-- login-page -->
+<div class="login-page">
+  <div class="container"> 
+    <h3 class="w3ls-title w3ls-title1">Login to your account</h3>  
+    <div class="login-body">
+      <form action="#" method="post">
+        <input type="text" class="user" name="email" placeholder="Enter your email" required="" [(ngModel)]="uname">
+        <input type="password" name="password" class="lock" placeholder="Password" required="" [(ngModel)]="pass">
+        <input type="submit" value="Login" (click)="onLogin()">
+        {{msg}}
+        <div class="forgot-grid">
+          <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Remember me</label>
+          <div class="forgot">
+            <a href="#">Forgot Password?</a>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+      </form>
+    </div>  
+    <h6> Not a Member? <a (click)="onclick()">Sign Up Now »</a> </h6> 
+    
+  </div>
+</div>
+<!-- //login-page --> 

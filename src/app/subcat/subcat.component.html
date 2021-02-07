@@ -1,0 +1,43 @@
+<div class="login-page">
+  <div class="container"> 
+    <ol class="breadcrumb breadcrumb1" id="bread">
+      <li><a routerLink="/adminpanel">Home</a></li>
+      <li class="active">Manage Sub Categories</li>
+    </ol> 
+    <div class="clearfix"> </div>
+    <h3 class="w3ls-title w3ls-title1">MANAGE SUB CATEGORY</h3>  
+    <div class="login-body">
+      <form action="#" method="post">
+        <select name="cat" [(ngModel)]="cat" class="form-control" (change)="fetchsubcat(cat)">
+          <option value="">Choose Category</option>
+          <option *ngFor="let x of allcat" value="{{x._id}}">{{x.catname}}</option>
+        </select>
+        <input type="text" class="user" name="scatname" placeholder="Enter Sub Category" required="" [(ngModel)]="scatname">
+        <input type="file" name="scatpic" class="lock" (change)="fileselected($event)">
+        <div *ngIf="update"><img src="uploads/{{subcat.spic}} " height="50"></div>
+        <input type="submit" value="Add" name="bt" (click)="onscatadd()">
+        <div *ngIf="update"><input type="submit" value="Update" name="bt2" (click)="updatesubcat()"></div>
+        <br/>
+        {{msg}}
+      </form>
+    </div>  
+    <br/>
+    <div *ngIf="visibility">
+      <table cellpadding="0" cellspacing="0" align="right" class="table">
+        <tr>
+            <th>PICTURE</th>
+            <th>Sub Category Name</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let x of allsubcat">
+          <td><img src="uploads/{{x.spic}}" height="75"></td>
+          <td>{{x.subcatname}}</td>
+          <td><input type="button" name="b1" value="update" (click)="onsubcatupdate(x)"></td>
+          <td><input type="button" name="b2" value="delete" (click)="onsubcatdel(x)"></td>
+        </tr>
+      </table> 
+    </div>
+    
+  </div>
+</div>

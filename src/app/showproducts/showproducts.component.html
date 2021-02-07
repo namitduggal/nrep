@@ -1,0 +1,33 @@
+<div class="products">	 
+  <div class="container">
+    <div class="col-md-9 product-w3ls-right">
+      <!-- breadcrumbs --> 
+      <ol class="breadcrumb breadcrumb1">
+        <li><a routerLink="/homepage">Home</a></li>
+        <li><a routerLink="/showcategories">Categories</a></li>
+        <li>Sub Categories</li>>
+        <li class="active">Products</li>
+      </ol> 
+      <div class="clearfix"> </div>
+
+<div class="products-row">
+  <div *ngFor="let x of allprods,let i=index">
+<div class="col-md-3 product-grids"> 
+  <div class="agile-products" align="center" (mouseenter)="calc(x,i)" (mouseleave)="left()">
+    <div class="new-tag"><h6>{{x.pdiscount}}%<br>Off</h6></div>
+    <a routerLink="/productdetails" [queryParams]="{pid:x._id}"><img src="uploads/{{x.spic}}" height="150px" class="img-responsive" >
+    <div class="agile-product-text">              
+      <h5>{{x.pname}}</h5> 
+      <div *ngIf="x" (onCreate)="tr(i)"> 
+      </div>
+      <button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Click to add</button>
+      </div>
+    </a>
+  </div> 
+</div>
+</div>
+{{msg}}
+</div> 
+</div>
+</div>
+</div>

@@ -1,0 +1,14 @@
+<div class="login-page">
+  <div class="container"> 
+    <h3 class="w3ls-title w3ls-title1">Create your account</h3>  
+    <div class="login-body">
+      <form #signup="ngForm">
+        <input type="text" class="form-control" name="name" placeholder="Enter your Name" required="" [(ngModel)]="nam">
+        <input type="email" class="form-control" name="email" placeholder="Enter your email" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" required="" [(ngModel)]="un"><br/>
+        <input type="password" name="password" class="form-control" placeholder="Password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  required="" [(ngModel)]="passw">
+        <input type="submit" value="Sign Up " (click)="onsignup(signup)">
+      </form>
+      <div>{{msg}}</div>
+    </div>  
+  </div>
+</div>

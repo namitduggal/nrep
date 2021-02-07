@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div [ngSwitch]="utype">
+    <div *ngSwitchCase="'admin'">
+        <app-adminpanel></app-adminpanel>
+    </div>
+    <div *ngSwitchCase="'normal'">
+        <app-header></app-header>
+    </div>
+    <div *ngSwitchDefault>
+        <app-header></app-header>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

@@ -1,0 +1,38 @@
+<div class="login-page">
+  <div class="container"> 
+    <h3 class="w3ls-title w3ls-title1">YOUR ITEMS</h3>
+    <div *ngIf="visibility; then trueblock else falseblock"></div>
+    <ng-template #trueblock>
+    <table cellpadding="0" cellspacing="0" align="right" class="table">
+      <tr>
+        <th>SR No.</th>	
+        <th>Picture</th>
+        <th>Name</th>
+        <th>Rate</th>
+        <th>Quantity</th>
+        <th>Total Cost</th>
+        <th></th>
+    </tr>
+      <tr *ngFor="let x of prodlist;let i=index">
+        <td>{{i+1}}</td>
+        <td><img src="uploads/{{x.ppic}}" height="50"></td>
+        <td>{{x.pname}}</td>
+        <td>{{x.prate}}</td>
+        <td>{{x.qt}}</td>
+        <td>{{x.tc}}</td>
+        <td><input type="button" value="Remove" (click)="removeitem(x._id)"></td>
+      </tr>
+    </table>
+    <div class="clearfix"> </div>
+    <div class="total"><h3>GRAND TOTAL: {{gtotal}}</h3><br/></div>
+    <div class="cont"><a routerLink="/homepage"><input type="button" name="cont" id="continue" value="Continue Shopping"  ></a></div>
+  <div class="chkout"><a routerLink="/checkout"><input type="button" name="sub" value="Proceed to Checkout" ></a></div>
+
+  </ng-template>
+  <ng-template #falseblock>
+    <h3 text-align="right">ADD PRODUCTS TO YOUR CART</h3>
+  </ng-template>
+  <div>
+  </div>
+</div>
+    </div>  

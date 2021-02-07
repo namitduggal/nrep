@@ -1,0 +1,28 @@
+<div class="products">	 
+  <div class="container">
+    <div class="col-md-9 product-w3ls-right">
+      <!-- breadcrumbs --> 
+      <ol class="breadcrumb breadcrumb1">
+        <li><a href="index.html">Home</a></li>
+        <li><a routerLink="/showcategories">Categories</a></li>
+        <li class="active">Sub Categories</li>
+      </ol> 
+      <div class="clearfix"> </div>
+
+<div class="products-row">
+  <div *ngFor="let x of allsubcat">
+<div class="col-md-3 product-grids"> 
+  <div class="agile-products" align="center">
+    <a routerLink="/showproducts" [queryParams]="{catid:x.catid,subcatid:x._id}"><img src="uploads/{{x.spic}}" height="150px" class="img-responsive" >
+    <div class="agile-product-text" align="center">              
+      <h5>{{x.subcatname}}</h5>   
+    </div>
+  </a>
+  </div> 
+</div>
+</div>
+<div>{{msg}}</div>
+</div>
+</div> 
+</div>
+</div>

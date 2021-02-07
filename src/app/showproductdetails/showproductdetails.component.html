@@ -1,0 +1,40 @@
+
+<div class="products">	 
+  <div class="container">  
+      <ol class="breadcrumb breadcrumb1">
+        <li><a routerLink="/homepage">Home</a></li>
+        <li class="active">Product Details</li>
+      </ol> 
+      <br/>
+      <div class="clearfix"> </div>
+    <div class="single-page">
+      <div *ngIf="visibility">
+      <div class="single-page-row" id="detail-21">
+        <div class="col-md-6 single-top-left">	
+          <img src="uploads/{{prod.spic}}" data-imagezoom="true" class="img-responsive" alt="">
+        </div>
+        <div class="col-md-6 single-top-right">
+          <h3 class="item_name">{{prod.pname}}</h3>
+          <div class="single-price">
+            <ul>
+              <li>{{price}}</li>  
+              <li><del>{{rate}}</del></li> 
+              <li><span class="w3off">{{prod.pdiscount}}% OFF</span></li> 
+            </ul>	
+          </div> 
+          <p class="single-price-text">{{prod.pdesc}}</p>
+          <form action="#" method="post">
+            <select name="quant" class="form-control" [(ngModel)]="quantity">
+              <option value="">Select Amount</option>
+              <option *ngFor="let x of showstock" >{{x}}</option>
+            </select> <br/>
+            <button type="submit" class="w3ls-cart" (click)="onadding()"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+          </form>
+          </div>
+         <div class="clearfix"> </div>  
+      </div> 
+    </div>
+    <div>{{msg}} </div>
+      </div>
+    </div> 
+  </div>

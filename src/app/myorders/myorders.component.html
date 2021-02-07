@@ -1,0 +1,30 @@
+<div class="login-page">
+  <div class="container"> 
+    <h3 class="w3ls-title w3ls-title1">MY ORDERS</h3>
+    <table cellpadding="0" cellspacing="0" align="right" class="table">
+      <tr>
+        <th>Sr. No</th>
+        <th>Order No</th>	
+        <th>Payment Mode</th>
+        <th>Address</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Status</th>
+    </tr>
+    <tr class="rem1" *ngFor="let x of orders;let i=index">
+      <td class="invert">{{i+1}}</td>
+      <td class="invert"><a routerLink="/orderDetails" [queryParams]="{orderid: x._id}">{{x._id}}</a></td>
+      <td class="invert">{{x.paymentmode}}</td>
+      <td class="invert">{{x.address}}</td>
+      <td class="invert">{{x.orderdate}}</td>
+      <td class="invert">{{x.orderamount}}</td>
+      <td class="invert">{{x.status}}</td>
+      
+      
+            </tr> 
+    </table>
+    <div class="clearfix"> </div>
+    <div class="cont"><a routerLink="/homepage"><input type="button" name="cont" id="continue" value="Continue Shopping"  ></a></div>
+ 
+    </div>
+    </div>  

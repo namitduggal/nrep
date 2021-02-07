@@ -1,0 +1,50 @@
+<div class="login-page">
+  <div class="container"> 
+    <ol class="breadcrumb breadcrumb1" id="bread">
+      <li><a routerLink="/adminpanel">Home</a></li>
+      <li class="active">Manage Products</li>
+    </ol> 
+    <div class="clearfix"> </div>
+    <h3 class="w3ls-title w3ls-title1">MANAGE PRODUCTS</h3>  
+    <div class="login-body">
+      <form action="#" method="post" class="form-control" class="form1">
+        <select name="cat" [(ngModel)]="cat" class="form-control" (change)="fetchsubcat()">
+          <option value="">Choose Category</option>
+          <option *ngFor="let x of allcat" value="{{x._id}}">{{x.catname}}</option>
+        </select>
+        <select name="subcat" class="form-control" [(ngModel)]="scat" (change)="fetchproducts()">
+          <option value="">Choose SUB Category</option>
+          <option *ngFor="let x of allsubcat" value="{{x._id}}">{{x.subcatname}}</option>
+        </select>
+        <input type="text" class="user" name="prod" placeholder="Enter Product Name" required="" [(ngModel)]="prodname">
+        <input type="file" name="scatpic" class="lock" (change)="fileselected($event)">
+        <div *ngIf="visibility"><img src="uploads/{{product.spic}} " height="50"></div>
+        <input type="text" class="user" name="rate" placeholder="Enter rate" required="" [(ngModel)]="rate">
+        <input type="text" class="user" name="discount" placeholder="Enter discount" required="" [(ngModel)]="disc">
+        <textarea class="user" name="desc" placeholder="Enter description" class="txtarea"  [(ngModel)]="desc"></textarea>
+          <input type="text" class="user" name="stock" placeholder="Enter Stock" required="" [(ngModel)]="stock">
+        <input type="submit" value="Add" name="bt" (click)="onscatadd()">
+        <div *ngIf="update"><input type="submit" value="Update" name="bt2" (click)="updateprod()"></div>
+        <br/>
+        {{msg}}
+      </form>
+    </div>  
+    <br/>
+    <table cellpadding="0" cellspacing="0" align="right" class="table">
+      <tr>
+          <th>PICTURE</th>
+          <th>Subcategory Id</th>
+          <th>Product Name</th>
+          <th>Update</th>
+          <th>Delete</th>
+      </tr>
+      <tr *ngFor="let x of prodlist">
+        <td><img src="uploads/{{x.spic}}" height="75"></td>
+        <td>{{x.subcatid}}</td>
+        <td>{{x.pname}}</td>
+        <td><input type="button" name="b1" value="update" (click)="onprodupdate(x)"></td>
+        <td><input type="button" name="b2" value="delete" (click)="onproddel(x)"></td>
+      </tr>
+    </table>
+  </div>
+</div>

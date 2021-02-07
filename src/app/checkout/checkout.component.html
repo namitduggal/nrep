@@ -1,0 +1,28 @@
+<div class="login-page">
+  <div class="container"> 
+    <h3 class="w3ls-title w3ls-title1">CHECKOUT</h3>  
+    <div class="login-body">
+      <h2>Checkout here</h2>
+      <h5>Profile Information</h5><br/>
+      <form #checkout="ngForm">
+        <textarea id="add" placeholder="Your Shipping Address" required="" name="address" [(ngModel)]="address"class="form-control"></textarea><br/>
+        Choose Payment Mode:<br/><br/>
+      <label><input type="radio" name="mode" value="card" [(ngModel)]="mode"(click)="onrclick()">Debit/Credit Card</label>&nbsp;
+      <label><input type="radio" name="mode" value="cash" [(ngModel)]="mode"(click)="onr1click()">Cash on Delivery</label><br/>
+      
+      <div *ngIf="visibility">
+          <h6>Login information</h6>
+        <input type="number" placeholder="Credit Card Number" pattern="^((4\d{3})|(5[1-5]\d{2})|(6011))-?\d{4}-?\d{4}-?\d{4}|3[4,7]\d{13}$" required="" name="cnum" [(ngModel)]="cardnum"class="form-control"><br/>
+        <input type="text" placeholder="Company Name" required="" name="cname" [(ngModel)]="compname"><br/>
+        <input type="text" placeholder="Holder Name" required="" name="hname" [(ngModel)]="hname"><br/>
+        <input type="text" placeholder="Expiry date" required="" name="date" [(ngModel)]="expdate"class="form-control"><br/>
+  
+        <input type="number" placeholder="CVV no." required="" name="cvvno" [(ngModel)]="cvvno"class="form-control"><br/>
+      </div>
+      
+        <input type="submit" name="s1" value="Make Payment" (click)="onpayment(checkout)">
+      </form>
+        {{msg}}
+    </div>
+  </div>  
+  </div>

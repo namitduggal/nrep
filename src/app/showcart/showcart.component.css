@@ -1,0 +1,47 @@
+.chkout
+{
+    display:inline-block;
+    position: relative;
+
+right: -28%;
+}
+.total
+{
+    
+    position: relative;
+
+right: -30%;
+}
+.cont
+{
+    display:inline;
+    position: relative;
+
+right: -7%;
+}
+@media only screen and (max-width: 600px) {
+    .chkout
+    {
+        display:block;
+        position: relative;
+
+right: -7%;
+    }
+    .cont
+{
+    display:block;
+    position: relative;
+right: -7%;
+}
+.total
+{
+    
+    position: relative;
+
+right: -25%;
+}
+#continue{
+    
+    width:134px;
+}
+}

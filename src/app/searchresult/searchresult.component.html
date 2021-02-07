@@ -1,0 +1,30 @@
+<div class="products">	 
+  <div class="container">
+    <div class="col-md-9 product-w3ls-right">
+      <!-- breadcrumbs --> 
+      <ol class="breadcrumb breadcrumb1">
+        <li><a href="index.html">Home</a></li>
+        <li><a routerLink="/showcategories">Categories</a></li>
+        <li>Sub Categories</li>>
+        <li class="active">Products</li>
+      </ol> 
+      <div class="clearfix"> </div>
+
+<div class="products-row">
+  <div *ngFor="let x of allprods">
+<div class="col-md-3 product-grids"> 
+  <div class="agile-products" align="center" (mouseenter)="calc(x)" (mouseleave)="left()">
+    <a routerLink="/productdetails" [queryParams]="{pid:x._id}"><img src="uploads/{{x.spic}}" height="150px" class="img-responsive" >
+    <div class="agile-product-text">              
+      <h5>{{x.pname}}</h5> 
+
+      </div>
+    </a>
+  </div> 
+</div>
+</div>
+{{msg}}
+</div> 
+</div>
+</div>
+</div>
