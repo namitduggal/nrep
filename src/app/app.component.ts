@@ -8,6 +8,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  usertype:string;
   title = 'eCommerceProj';
   constructor(private route:ActivatedRoute,private router:Router,private myhttp:HttpClient) { 
     router.events.subscribe(event=>{
@@ -17,8 +18,8 @@ export class AppComponent {
       })
     }
       ngOnInit(){
-  var usertype="normal";
-  usertype=sessionStorage.getItem("utype");
+   this.usertype="normal";
+  this.usertype=sessionStorage.getItem("utype");
     }
 }
 
