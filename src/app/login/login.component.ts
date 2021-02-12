@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   onLogin()
   {
     var myparams={un:this.uname,passw:this.pass};
-    this.myhttp.post("http://localhost:3000/api/login",myparams,{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.post("https://ecommerce-webpage-try.herokuapp.com/api/login",myparams,{responseType:"json"}).subscribe((res:any[])=>
     {
       if(res.length==0)
       {

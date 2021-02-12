@@ -35,7 +35,7 @@ export class AdmallordersComponent implements OnInit {
   }
   fetchcart()
   {
-    this.myhttp.get("http://localhost:3000/api/fetchallorders",{responseType:"json"}).subscribe(
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchallorders",{responseType:"json"}).subscribe(
       (response:any[])=>
       {
         if(response.length>0)

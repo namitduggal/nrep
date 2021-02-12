@@ -23,7 +23,7 @@ export class OrdersummaryComponent implements OnInit {
   }
   fetchorderdetails()
   {
-    this.myhttp.get("http://localhost:3000/api/getordernum?un=" + sessionStorage.getItem("uname"),{responseType:"json"}).subscribe(
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/getordernum?un=" + sessionStorage.getItem("uname"),{responseType:"json"}).subscribe(
       (response:any[])=>
       {
         if(response.length>0)
@@ -45,7 +45,7 @@ export class OrdersummaryComponent implements OnInit {
   }
   fetchcart()
   {
-    this.myhttp.get("http://localhost:3000/api/getcart?un=" + sessionStorage.getItem("uname"),{responseType:"json"}).subscribe(
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/getcart?un=" + sessionStorage.getItem("uname"),{responseType:"json"}).subscribe(
       (response:any[])=>
       {
         if(response.length>0)
@@ -71,7 +71,7 @@ export class OrdersummaryComponent implements OnInit {
       let vals={orderid:this.orderno,pid:this.cart[x]["prodid"],pname:this.cart[x]["pname"],prate:this.cart[x]["prate"],qty:this.cart[x]["qt"],tc:this.cart[x]["tc"],ppic:this.cart[x]["ppic"], username:sessionStorage.getItem("uname")}
       this.orditems.push(vals);
     }
-    this.myhttp.post("http://localhost:3000/api/insertorder",this.orditems,{responseType:"text"}).subscribe(
+    this.myhttp.post("https://ecommerce-webpage-try.herokuapp.com/api/insertorder",this.orditems,{responseType:"text"}).subscribe(
         (response)=>
         {
           this.updatestockdb();
@@ -90,7 +90,7 @@ export class OrdersummaryComponent implements OnInit {
       let vals2={pid:this.cart[x]["prodid"],qty:this.cart[x]["qt"]}
       this.updatestock.push(vals2);
     }
-    this.myhttp.put("http://localhost:3000/api/updatestock",this.updatestock,{responseType:"text"}).subscribe(
+    this.myhttp.put("https://ecommerce-webpage-try.herokuapp.com/api/updatestock",this.updatestock,{responseType:"text"}).subscribe(
         (response)=>
         {
           console.log("updated");
@@ -107,7 +107,7 @@ export class OrdersummaryComponent implements OnInit {
   {
     //alert(id);
     alert("deleting");
-    this.myhttp.delete("http://localhost:3000/api/emptycart?un=" + sessionStorage.getItem("uname") ,{responseType:"text"}).subscribe(
+    this.myhttp.delete("https://ecommerce-webpage-try.herokuapp.com/api/emptycart?un=" + sessionStorage.getItem("uname") ,{responseType:"text"}).subscribe(
       (response)=>
       {
         console.log("cart emptied");

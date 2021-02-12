@@ -34,7 +34,7 @@ export class ListofmembersComponent implements OnInit {
   }
   fetchmembers()
   {
-    this.myhttp.get("http://localhost:3000/api/listmembers",{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/listmembers",{responseType:"json"}).subscribe((res:any[])=>
     {
       if(res.length==0)
       {
@@ -57,7 +57,7 @@ export class ListofmembersComponent implements OnInit {
     var uresp=confirm("Are you sure you want to delete?");
     if(uresp==true)
     {
-      this.myhttp.delete("http://localhost:3000/api/deluser?id="+memid,{responseType:"json"}).subscribe((res:any)=>
+      this.myhttp.delete("https://ecommerce-webpage-try.herokuapp.com/api/deluser?id="+memid,{responseType:"json"}).subscribe((res:any)=>
       {
         if(res.deletedCount==1)
         {

@@ -18,7 +18,7 @@ export class MyordersComponent implements OnInit {
 
   fetchcart()
   {
-    this.myhttp.get("http://localhost:3000/api/fetchorders?uname=" + sessionStorage.getItem("uname"),{responseType:"json"}).subscribe(
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchorders?uname=" + sessionStorage.getItem("uname"),{responseType:"json"}).subscribe(
       (response:any[])=>
       {
         if(response.length>0)

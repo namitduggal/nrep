@@ -51,7 +51,7 @@ export class HeaderComponent implements OnInit {
   }
   fetchcategories()
   {
-    this.myhttp.get("http://localhost:3000/api/fetchcat",{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchcat",{responseType:"json"}).subscribe((res:any[])=>
     {
       this.allcat=res;
     }) 

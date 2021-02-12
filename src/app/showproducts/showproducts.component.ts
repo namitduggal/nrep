@@ -39,7 +39,7 @@ export class ShowproductsComponent implements OnInit {
   }
   fetchproducts()
   {
-    this.myhttp.get("http://localhost:3000/api/fetchprods/?catid="+this.cat+ "&scatid="+this.scat,{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchprods/?catid="+this.cat+ "&scatid="+this.scat,{responseType:"json"}).subscribe((res:any[])=>
     {
       
       if(res.length>0)

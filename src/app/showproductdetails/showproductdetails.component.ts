@@ -37,7 +37,7 @@ export class ShowproductdetailsComponent implements OnInit {
 }
 fetchproducts()
   {
-    this.myhttp.get("http://localhost:3000/api/fetchprodsbyid/?pid="+this.prodid,{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchprodsbyid/?pid="+this.prodid,{responseType:"json"}).subscribe((res:any[])=>
     {
       
       if(res.length>0&&res[0].pstock>0)
@@ -90,7 +90,7 @@ fetchproducts()
   }
   check()
   {
-    this.myhttp.get("http://localhost:3000/api/checkcartprods/?un="+this.uname+"&prodid="+this.prodid,{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/checkcartprods/?un="+this.uname+"&prodid="+this.prodid,{responseType:"json"}).subscribe((res:any[])=>
     {
       if(res.length>0)
       {
@@ -112,7 +112,7 @@ fetchproducts()
   {
     this.cart.qt=Number(this.cart.qt)+Number(this.quantity);
         this.cart.tc=Number(this.cart.qt*this.cart.prate);
-        this.myhttp.put("http://localhost:3000/api/updatecart",this.cart,{responseType:"text"}).subscribe((res)=>{
+        this.myhttp.put("https://ecommerce-webpage-try.herokuapp.com/api/updatecart",this.cart,{responseType:"text"}).subscribe((res)=>{
           alert(res);},
           (error)=>{
             alert(error);
@@ -123,7 +123,7 @@ fetchproducts()
     var vals={pid:this.prod._id,pname:this.prod.pname,prate:this.price,qt:this.quantity,
       tc:this.price*this.quantity,ppic:this.prod.spic,username:this.uname};
 
-      this.myhttp.post("http://localhost:3000/api/addcart",vals,
+      this.myhttp.post("https://ecommerce-webpage-try.herokuapp.com/api/addcart",vals,
     {responseType:"text"}).subscribe(
       (response)=>
       {

@@ -32,7 +32,7 @@ export class PasswordComponent implements OnInit {
     if(this.cnewpass==this.newpass)
     {
       var myparams={uname:sessionStorage.getItem("uname"),cpass:this.cpass,npass:this.newpass};
-      this.myhttp.put("http://localhost:3000/api/changepass",myparams,{responseType:"json"}).subscribe((res:any)=>
+      this.myhttp.put("https://ecommerce-webpage-try.herokuapp.com/api/changepass",myparams,{responseType:"json"}).subscribe((res:any)=>
       {
         if(res.nModified==0)
         {

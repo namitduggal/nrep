@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
     if(myform.valid)
     {
     var myparams={nm:this.nam,uname:this.un,pass:this.passw};
-    this.myhttp.post("http://localhost:3000/api/signup",myparams,{responseType:"text"}).subscribe((res)=>
+    this.myhttp.post("https://ecommerce-webpage-try.herokuapp.com/api/signup",myparams,{responseType:"text"}).subscribe((res)=>
     {
       this.msg=res;
     });

@@ -31,7 +31,7 @@ export class ShowsubcatlistComponent implements OnInit {
   }
   fetchsubcat()
   {
-    this.myhttp.get("http://localhost:3000/api/fetchsubcat?cid="+this.cat,{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchsubcat?cid="+this.cat,{responseType:"json"}).subscribe((res:any[])=>
     {
       if(res.length>0)
       {

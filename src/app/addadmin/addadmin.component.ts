@@ -38,7 +38,7 @@ export class AddadminComponent implements OnInit {
     if(myform.valid)
     {
     var myparams={nm:this.nam,uname:this.un,pass:this.passw};
-    this.myhttp.post("http://localhost:3000/api/adminsignup",myparams,{responseType:"text"}).subscribe((res)=>
+    this.myhttp.post("https://ecommerce-webpage-try.herokuapp.com/api/adminsignup",myparams,{responseType:"text"}).subscribe((res)=>
     {
       this.msg=res;
     });

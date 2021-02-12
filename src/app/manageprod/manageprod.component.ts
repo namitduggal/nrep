@@ -50,14 +50,14 @@ export class ManageprodComponent implements OnInit {
 
   fetchcategories()
   {
-    this.myhttp.get("http://localhost:3000/api/fetchcat",{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchcat",{responseType:"json"}).subscribe((res:any[])=>
     {
       this.allcat=res;
     })  
   }
   fetchproducts()
   {
-    this.myhttp.get("http://localhost:3000/api/fetchprods/?catid="+this.cat+ "&scatid="+this.scat,{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchprods/?catid="+this.cat+ "&scatid="+this.scat,{responseType:"json"}).subscribe((res:any[])=>
     {
       
       if(res.length>0)
@@ -76,7 +76,7 @@ export class ManageprodComponent implements OnInit {
   }
   fetchsubcat()
   {
-    this.myhttp.get("http://localhost:3000/api/fetchsubcat?cid="+this.cat,{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchsubcat?cid="+this.cat,{responseType:"json"}).subscribe((res:any[])=>
     {
       if(res.length>0)
       {
@@ -113,7 +113,7 @@ export class ManageprodComponent implements OnInit {
     mydata.append("pdiscount",this.disc);
     mydata.append("pdesc",this.desc);
     mydata.append("pstock",this.stock);
-  this.myhttp.post("http://localhost:3000/api/manageprod",mydata,{responseType:"text"}).subscribe((res:any)=>
+  this.myhttp.post("https://ecommerce-webpage-try.herokuapp.com/api/manageprod",mydata,{responseType:"text"}).subscribe((res:any)=>
   {
     this.msg=res;
   },
@@ -158,7 +158,7 @@ updateprod()
     mydata.append("pdiscount",this.disc);
     mydata.append("pdesc",this.desc);
     mydata.append("pstock",this.stock);
-    this.myhttp.put("http://localhost:3000/api/updateprod",mydata,{responseType:"text"}).subscribe((res)=>{
+    this.myhttp.put("https://ecommerce-webpage-try.herokuapp.com/api/updateprod",mydata,{responseType:"text"}).subscribe((res)=>{
     alert(res);},
     (error)=>{
       alert(error);
@@ -169,7 +169,7 @@ onproddel(prod)
   var uresp=confirm("Are you sure you want to delete?");
     if(uresp==true)
     {
-      this.myhttp.delete("http://localhost:3000/api/delprod/?pid="+prod._id+"&spic="+prod.spic,{responseType:"json"}).subscribe((res:any)=>
+      this.myhttp.delete("https://ecommerce-webpage-try.herokuapp.com/api/delprod/?pid="+prod._id+"&spic="+prod.spic,{responseType:"json"}).subscribe((res:any)=>
       {
         
         if(res.deletedCount==1)

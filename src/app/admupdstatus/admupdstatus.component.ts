@@ -38,7 +38,7 @@ export class AdmupdstatusComponent implements OnInit {
   }
   updatestatus() {
     let vals={newstatus:this.nst,oid:this.oid};
-    this.myhttp.put("http://localhost:3000/api/updateStatus", vals, {responseType:"text"}).subscribe(
+    this.myhttp.put("https://ecommerce-webpage-try.herokuapp.com/api/updateStatus", vals, {responseType:"text"}).subscribe(
       (response)=>
       {
           this.msg=response;

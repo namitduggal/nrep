@@ -82,7 +82,7 @@ app.post("/api/mymsg",function(req,res)
 })
 
 app.post("/api/signup", function(req, res) {
- mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+ mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 
  
  var newsignup = new Signup( {name:req.body.nm,username: req.body.uname, pass: req.body.pass,usertype:"common"} );
@@ -103,7 +103,7 @@ app.post("/api/signup", function(req, res) {
  });
 });
 app.post("/api/adminsignup", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
    
 	
 	var newsignup = new Signup( {name:req.body.nm,username: req.body.uname, pass: req.body.pass,usertype:"admin"} );
@@ -125,7 +125,7 @@ app.post("/api/adminsignup", function(req, res) {
    });
    
 app.post("/api/login", function(req, res) {
- mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+ mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
  console.log(req.body);
 
  Signup.find({ username:req.body.un,pass:req.body.passw}, function(err, data)
@@ -147,7 +147,7 @@ app.post("/api/login", function(req, res) {
 });
 
 app.put("/api/updatestatus", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	//var d = new Date();
 	checkout.update({ _id: req.body.oid }, { $set: { status: req.body.newstatus}},function(err) {
 	if (err)
@@ -212,7 +212,7 @@ app.delete("/deletecat", function(req, res) {
 });
 app.post("/api/addcat",upload.single('photo'), function(req, res) 
 {
- mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+ mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
  //var d = new Date(); 
  if (!req.file) 
  {
@@ -240,7 +240,7 @@ app.post("/api/addcat",upload.single('photo'), function(req, res)
 
 app.post("/api/managesubcat",upload.single('photo'), function(req, res) 
 {
- mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+ mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
  //var d = new Date(); 
  if (!req.file) 
  {
@@ -265,7 +265,7 @@ app.post("/api/managesubcat",upload.single('photo'), function(req, res)
 });
 
 app.get("/api/fetchsubcat",function(req,res){
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	managesubcat.find({catid:req.query.cid},function(err,data)
 	{
 		if(err)
@@ -342,7 +342,7 @@ app.put("/updatesubcat", upload.single('photo'),function(req, res) {
 });
 
 app.delete("/api/delprod", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	console.log(req.query);
     if(req.query.spic!="noImageFound.jfif")
 	 {
@@ -371,7 +371,7 @@ app.delete("/api/delprod", function(req, res) {
 
 
    app.delete("/api/delcat", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	console.log(req.query);
     if(req.query.catpic!="noImageFound.jfif")
 	 {
@@ -399,7 +399,7 @@ app.delete("/api/delprod", function(req, res) {
    });
 
    app.delete("/api/delsubcat", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	console.log(req.query);
     if(req.query.subcatpic!="noImageFound.jfif")
 	 {
@@ -428,7 +428,7 @@ app.delete("/api/delprod", function(req, res) {
 
 
 app.delete("/api/removecartitems", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	cart.remove({ _id: req.query.cid }, function(err, data)
 	{
 	if (err)
@@ -448,7 +448,7 @@ app.delete("/api/removecartitems", function(req, res) {
    });
 
 app.post("/api/manageprod" ,upload.single('photo'), function(req, res) {
- mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+ mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
  //var d = new Date();
  
  if (!req.file) 
@@ -474,7 +474,7 @@ app.post("/api/manageprod" ,upload.single('photo'), function(req, res) {
 });
 
 app.put("/api/updateprod", upload.single('photo'),function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	//var d = new Date();
 	
 	
@@ -510,7 +510,7 @@ app.put("/api/updateprod", upload.single('photo'),function(req, res) {
 
 
    app.put("/api/updatecat", upload.single('photo'),function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	//var d = new Date();
 	
 	
@@ -545,7 +545,7 @@ app.put("/api/updateprod", upload.single('photo'),function(req, res) {
    });
 
    app.put("/api/updatesubcat", upload.single('photo'),function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	//var d = new Date();
 	
 	
@@ -581,7 +581,7 @@ app.put("/api/updateprod", upload.single('photo'),function(req, res) {
 
 
 app.post("/api/addcart" ,function(req, res) {
- mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+ mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
  //var d = new Date();
  
  var newcart = new cart( {prodid:req.body.pid,pname:req.body.pname,prate:req.body.prate,qt:req.body.qt,tc:req.body.tc,ppic:req.body.ppic, username:req.body.username } );
@@ -602,7 +602,7 @@ app.post("/api/addcart" ,function(req, res) {
 });
 
 app.put("/api/updatecart", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	//var d = new Date();
 		cart.update({_id:req.body._id }, {$set: { qt:req.body.qt,tc:req.body.tc}},function(err){
 		if (err)
@@ -624,7 +624,7 @@ app.put("/api/updatecart", function(req, res) {
 
 //get cart products from showcart component
 app.get("/api/getcart", function(req, res) {
- mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+ mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
  console.log(req.query);
 
  cart.find({ username:req.query.un}, function(err, data)
@@ -671,7 +671,7 @@ app.delete("/deletecardprod", function(req, res) {
 
 //get order number for ordersuccess component
 app.get("/api/getordernum", function(req, res) {
- mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+ mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
  checkout.find({ username: req.query.un }, function(err, data) {
  if (err)
  {
@@ -691,7 +691,7 @@ app.get("/api/getordernum", function(req, res) {
 
 //get cart details is as same as get cart prod api
 app.get("/api/getcartprods", function(req, res) {
- mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+ mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
  cart.find({ username: req.query.un }, function(err, data) {
  if (err)
  {
@@ -709,7 +709,7 @@ app.get("/api/getcartprods", function(req, res) {
  });
 });
 app.get("/api/checkcartprods", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	cart.find({ username: req.query.un ,prodid:req.query.prodid }, function(err, data) {
 	if (err)
 	{
@@ -731,7 +731,7 @@ app.get("/api/checkcartprods", function(req, res) {
 //insert order details for ordersuccess component
 app.post("/api/insertorder",function(req,res)
 {
-mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 var neworder=req.body;
 
 order.insertMany(neworder, function (err, docs) {
@@ -748,7 +748,7 @@ res.send("Successfully inserted");
 });
 
 app.post("/api/checkout", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	  var d = new Date();
 	  
 	var newcheckout = new checkout( {orderamount:req.body.billtot,address:req.body.add,username:req.body.un,orderdate:d,paymentmode:req.body.pmode,status:"Payment received, processing",cardno:req.body.cardno,coname:req.body.coname,holdername:req.body.hname,expdate:req.body.expdt,cvvno:req.body.cvv} );
@@ -772,7 +772,7 @@ app.post("/api/checkout", function(req, res) {
 
 //update stock after the successful of order
 app.put("/api/updatestock",function(req,res){
-mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 var updatelist=req.body;
 console.log("products used="+updatelist);
 for(let x=0;x<updatelist.length;x++)
@@ -801,7 +801,7 @@ mongoose.connection.close();
 
 //empty the cart after order complition
 app.delete("/api/emptycart", function(req, res) {
- mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+ mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
  cart.remove({ username:req.query.un }, function(err, data) {
  if (err)
  {
@@ -949,7 +949,7 @@ app.get("/fetchuserbyun", function(req, res) {
 
 
 app.get("/api/fetchorders", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	console.log(req.query.uname);
 	checkout.find({ username: req.query.uname}, function(err, data) {
 	if (err)
@@ -969,7 +969,7 @@ app.get("/api/fetchorders", function(req, res) {
 
 
    app.get("/api/fetchallorders", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	checkout.find(function(err, data) {
 	if (err)
 	{
@@ -1024,7 +1024,7 @@ app.get("/api/fetchprod", function(req, res) {
    });
 
    app.get("/api/fetchprodbyname", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	manageproduct.find({pname: { $regex: '.*' + req.query.pname ,$options:'i' }} ,function(err, data) {
 	if (err)
 	{
@@ -1043,7 +1043,7 @@ app.get("/api/fetchprod", function(req, res) {
    });
 
 app.get("/api/fetchcat", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	managecat.find(function(err, data) {
 	if (err)
 	{
@@ -1061,7 +1061,7 @@ app.get("/api/fetchcat", function(req, res) {
 	});
    });
 app.get("/api/fetchproducts", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	manageproduct.find(function(err, data) {
 	if (err)
 	{
@@ -1099,7 +1099,7 @@ app.get("/getallcategories", function(req, res) {
 });
 
 app.get("/api/listmembers",function(req,res){
-mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 Signup.find({"usertype":"common"},function(err,data){
 if(err)
 {
@@ -1118,7 +1118,7 @@ mongoose.connection.close();
 })
 
 app.delete("/api/deluser",function(req,res){
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	console.log(req.query);
 	Signup.remove({_id:req.query.id},function(err,data)
 	{
@@ -1138,7 +1138,7 @@ app.delete("/api/deluser",function(req,res){
 });
 
 app.put("/api/changepass",function(req,res){
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	console.log(req.body);
 	Signup.updateOne({username:req.body.uname,pass:req.body.cpass},{$set:{pass:req.body.npass}},function(err,data){
 		if(err)
@@ -1157,7 +1157,7 @@ app.put("/api/changepass",function(req,res){
 });
 
 app.get("/api/fetchprods", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	manageproduct.find({catid:req.query.catid,subcatid:req.query.scatid},function(err, data) {
 	if (err)
 	{
@@ -1176,7 +1176,7 @@ app.get("/api/fetchprods", function(req, res) {
    });
 
    app.get("/api/fetchprodsbyid", function(req, res) {
-	mongoose.connect("mongodb://localhost/myprojdb",{useNewUrlParser: true});
+	mongoose.connect("mongodb+srv://namit:pLQ3ZXEmk1NyuKMZ@cluster0.cevxk.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true});
 	manageproduct.find({_id:req.query.pid},function(err, data) {
 	if (err)
 	{

@@ -29,7 +29,7 @@ export class ShowcartComponent implements OnInit {
   }
   fetchcart()
   {
-    this.myhttp.get("http://localhost:3000/api/getcartprods/?un="+sessionStorage.getItem('uname'),{responseType:"json"}).subscribe((res:any[])=>{
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/getcartprods/?un="+sessionStorage.getItem('uname'),{responseType:"json"}).subscribe((res:any[])=>{
       if(res.length>0)
       {
         this.visibility=true;
@@ -51,7 +51,7 @@ export class ShowcartComponent implements OnInit {
     var uresp=confirm("Are you sure you want to remove?");
     if(uresp==true)
     {
-      this.myhttp.delete("http://localhost:3000/api/removecartitems/?cid="+cid,{responseType:"json"}).subscribe((res:any)=>
+      this.myhttp.delete("https://ecommerce-webpage-try.herokuapp.com/api/removecartitems/?cid="+cid,{responseType:"json"}).subscribe((res:any)=>
       {
         
         if(res.deletedCount==1)

@@ -34,7 +34,7 @@ export class SearchresultComponent implements OnInit {
 }
 fetchproducts()
   {
-    this.myhttp.get("http://localhost:3000/api/fetchprodbyname/?pname="+this.pname,{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchprodbyname/?pname="+this.pname,{responseType:"json"}).subscribe((res:any[])=>
     {
       
       if(res.length>0)

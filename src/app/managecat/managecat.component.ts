@@ -57,7 +57,7 @@ export class ManagecatComponent implements OnInit {
       mydata.append("photo",this.myfile);
     }
     mydata.append("catname",this.catname);
-  this.myhttp.post("http://localhost:3000/api/addcat",mydata,{responseType:"text"}).subscribe((res:any)=>
+  this.myhttp.post("https://ecommerce-webpage-try.herokuapp.com/api/addcat",mydata,{responseType:"text"}).subscribe((res:any)=>
   {
     this.msg=res;
   },
@@ -68,7 +68,7 @@ export class ManagecatComponent implements OnInit {
   }
   fetchcategories()
   {
-    this.myhttp.get("http://localhost:3000/api/fetchcat",{responseType:"json"}).subscribe((res:any[])=>
+    this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchcat",{responseType:"json"}).subscribe((res:any[])=>
     {
       if(res.length>0)
       {
@@ -103,7 +103,7 @@ updatecat()
     mydata.append("cid",this.cat._id);
     mydata.append("oldpic",this.cat.catpic);
     mydata.append("cname",this.catname);
-    this.myhttp.put("http://localhost:3000/api/updatecat",mydata,{responseType:"text"}).subscribe((res)=>{
+    this.myhttp.put("https://ecommerce-webpage-try.herokuapp.com/api/updatecat",mydata,{responseType:"text"}).subscribe((res)=>{
     alert(res);},
     (error)=>{
       alert(error);
@@ -114,7 +114,7 @@ oncatdel(category)
   var uresp=confirm("Are you sure you want to delete?");
     if(uresp==true)
     {
-      this.myhttp.delete("http://localhost:3000/api/delcat/?cid="+category._id+"&catpic="+category.catpic,{responseType:"json"}).subscribe((res:any)=>
+      this.myhttp.delete("https://ecommerce-webpage-try.herokuapp.com/api/delcat/?cid="+category._id+"&catpic="+category.catpic,{responseType:"json"}).subscribe((res:any)=>
       {
         
         if(res.deletedCount==1)
