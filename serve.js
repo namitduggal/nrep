@@ -7,9 +7,9 @@ const multer = require('multer');
 
 const DIR = 'src/uploads';
 
-app.use(express.static(__dirname+'/dist/e-commerce-proj'));
+app.use(express.static(__dirname+'/dist/eCommerceProj'));
 app.get('/*',function(req,res){
-	res.sendFile(path.join(__dirname+'/dist/e-commerce-proj/index.html'));
+	res.sendFile(path.join(__dirname+'/dist/eCommerceProj/index.html'));
 });
 const forceSSL = function() {
 	return function (req, res, next) {
