@@ -7,7 +7,10 @@ const multer = require('multer');
 
 const DIR = 'src/uploads';
 
-//app.use(express.static(__dirname));
+app.use(express.static(__dirname+'/dist/<name-of-app>'));
+app.get('/*',function(req,res){
+	res.sendFile(path.join(__dirname+'/dist/<name-of-app>/index.html'));
+});
 
 var picname;
 
@@ -26,7 +29,7 @@ let upload = multer({storage: storage});
 
 //for cors
 app.use(function (req, res, next) {
- res.setHeader('Access-Control-Allow-Origin', 'https://agile-stream-44368.herokuapp.com/');
+ res.setHeader('Access-Control-Allow-Origin', 'https://ecommerce-webpage-try.herokuapp.com/');
  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
  res.setHeader('Access-Control-Allow-Credentials', true);
@@ -1181,6 +1184,4 @@ app.get("/api/fetchprods", function(req, res) {
 	});
    });
 
-app.listen(3000, function () {
- console.log('Node.js server is running on port 3000');
-});
+app.listen(process.env.PORT||8080);
