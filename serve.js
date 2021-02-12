@@ -7,9 +7,9 @@ const multer = require('multer');
 
 const DIR = 'src/uploads';
 
-app.use(express.static(__dirname+'/dist/<name-of-app>'));
+app.use(express.static(__dirname+'/dist/e-commerce-proj'));
 app.get('/*',function(req,res){
-	res.sendFile(path.join(__dirname+'/dist/<name-of-app>/index.html'));
+	res.sendFile(path.join(__dirname+'/dist/e-commerce-proj/index.html'));
 });
 
 var picname;
