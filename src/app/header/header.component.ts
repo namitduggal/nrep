@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
       this.untype=true;
       this.pname="guest";
       
-      this.fetchcategories();
+      //this.fetchcategories();
     }
     else{
       if(sessionStorage.getItem("utype")=="common")
@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
       this.visibility=true;
       this.untype=true;
       this.pname=sessionStorage.getItem("nm");
-      this.fetchcategories();
+     // this.fetchcategories();
       }
       else if(sessionStorage.getItem("utype")=="admin")
       {
