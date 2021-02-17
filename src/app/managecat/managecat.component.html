@@ -14,7 +14,7 @@
         <form action="#" method="post" class="form-control" class="form1">
           <input type="text" class="user" name="catname" placeholder="Enter Category" required="" [(ngModel)]="catname">
           <input type="file" name="catpic" class="lock" (change)="fileselected($event)">
-          <div *ngIf="visibility"><img src="uploads/{{cat.catpic}} " height="50"></div>
+          <div *ngIf="visibility"><img src="dist/eCommerceProj/uploads/{{cat.catpic}} " height="50"></div>
           <input type="submit" value="Add" name="bt" (click)="oncatadd()">
           <div *ngIf="update"><input type="submit" value="Update" name="bt2" (click)="updatecat()"></div>    
         <br/>
