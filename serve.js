@@ -5,7 +5,7 @@ const fs = require('fs');
 const multer = require('multer');
 var cors = require('cors')
 
-const DIR = 'src/uploads';
+const DIR = 'dist/eCommerceProj/uploads';
 const port=process.env.PORT||8080;
 app.use(express.static(__dirname+'/dist/eCommerceProj'));
 /*app.get('/*',function(req,res){
