@@ -8,9 +8,9 @@ var cors = require('cors')
 const DIR = 'src/uploads';
 const port=process.env.PORT||8080;
 app.use(express.static(__dirname+'/dist/eCommerceProj'));
-app.get('/*',function(req,res){
+/*app.get('/*',function(req,res){
 	res.sendFile(path.join(__dirname+'/dist/eCommerceProj/index.html'));
-});
+});*/
 /*const forceSSL = function() {
 	return function (req, res, next) {
 	  if (req.headers['x-forwarded-proto'] !== 'https') {
