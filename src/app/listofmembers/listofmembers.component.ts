@@ -14,7 +14,7 @@ export class ListofmembersComponent implements OnInit {
   constructor(private route:ActivatedRoute,private router:Router,private myhttp:HttpClient) { 
     router.events.subscribe(event=>{
       if(event instanceof NavigationEnd){
-        this.ngOnInit();
+        this.ngOnInit(); 
       }
       })
   }

@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class ShowcatlistComponent implements OnInit {
 
   allcat:any[];
+  msg:string;
   constructor(private myrouter:Router,private route:ActivatedRoute,private myhttp:HttpClient) {
     myrouter.events.subscribe(event=>{
       if(event instanceof NavigationEnd)
@@ -29,7 +30,11 @@ export class ShowcatlistComponent implements OnInit {
   {
     this.myhttp.get("https://ecommerce-webpage-try.herokuapp.com/api/fetchcat",{responseType:"json"}).subscribe((res:any[])=>
     {
-      this.allcat=res;
+      this.allcat=res; 
+    },
+    (error)=>
+    {
+      this.msg=error;
     }) 
   }
 }

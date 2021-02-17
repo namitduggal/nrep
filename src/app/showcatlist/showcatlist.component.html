@@ -12,9 +12,9 @@
   <div *ngFor="let x of allcat">
 <div class="col-md-3 product-grids"> 
   <div class="agile-products" align="center">
-    <a routerLink="/showsubcategories" [queryParams]="{catid:x._id}"><img src="dist/eCommerceProj/uploads/{{x.catpic}}" height="150px" class="img-responsive" >
+    <a routerLink="/showsubcategories" [queryParams]="{catid:x._id}"><img src="dist/eCommerceProj/uploads/{{x.catpic}}" height="150px"  >
     <div class="agile-product-text" align="center">              
-      <h5 >{{x.catname}}</h5>   
+      <h5 >{{x.catname}}</h5>    
     </div>
   </a>
   </div> 
