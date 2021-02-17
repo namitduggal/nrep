@@ -13,7 +13,7 @@
   <div *ngFor="let x of allsubcat">
 <div class="col-md-3 product-grids"> 
   <div class="agile-products" align="center">
-    <a routerLink="/showproducts" [queryParams]="{catid:x.catid,subcatid:x._id}"><img src="dist/eCommerceProj/uploads/{{x.spic}}" height="150px" class="img-responsive" >
+    <a routerLink="/showproducts" [queryParams]="{catid:x.catid,subcatid:x._id}"><img src="uploads/{{x.spic}}" height="150px" class="img-responsive" >
     <div class="agile-product-text" align="center">              
       <h5>{{x.subcatname}}</h5>   
     </div>
