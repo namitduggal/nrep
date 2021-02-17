@@ -30,7 +30,7 @@
           <th>Delete</th>
       </tr>
       <tr *ngFor="let x of allcat">
-        <td><img src="uploads/{{x.catpic}}" height="75"></td>
+        <td><img src="dist/eCommerceProj/uploads/{{x.catpic}}" height="75"></td>
         <td>{{x.catname}}</td>
         <td><input type="button" name="b1" value="update" (click)="oncatupdate(x)"></td>
         <td><input type="button" name="b2" value="delete" (click)="oncatdel(x)"></td>

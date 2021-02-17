@@ -14,7 +14,7 @@
   <div *ngFor="let x of allprods">
 <div class="col-md-3 product-grids"> 
   <div class="agile-products" align="center" (mouseenter)="calc(x)" (mouseleave)="left()">
-    <a routerLink="/productdetails" [queryParams]="{pid:x._id}"><img src="uploads/{{x.spic}}" height="150px" class="img-responsive" >
+    <a routerLink="/productdetails" [queryParams]="{pid:x._id}"><img src="dist/eCommerceProj/uploads/{{x.spic}}" height="150px" class="img-responsive" >
     <div class="agile-product-text">              
       <h5>{{x.pname}}</h5> 
 

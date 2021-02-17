@@ -18,7 +18,7 @@
         </select>
         <input type="text" class="user" name="prod" placeholder="Enter Product Name" required="" [(ngModel)]="prodname">
         <input type="file" name="scatpic" class="lock" (change)="fileselected($event)">
-        <div *ngIf="visibility"><img src="uploads/{{product.spic}} " height="50"></div>
+        <div *ngIf="visibility"><img src="dist/eCommerceProj/uploads/{{product.spic}} " height="50"></div>
         <input type="text" class="user" name="rate" placeholder="Enter rate" required="" [(ngModel)]="rate">
         <input type="text" class="user" name="discount" placeholder="Enter discount" required="" [(ngModel)]="disc">
         <textarea class="user" name="desc" placeholder="Enter description" class="txtarea"  [(ngModel)]="desc"></textarea>
@@ -39,7 +39,7 @@
           <th>Delete</th>
       </tr>
       <tr *ngFor="let x of prodlist">
-        <td><img src="uploads/{{x.spic}}" height="75"></td>
+        <td><img src="dist/eCommerceProj/uploads/{{x.spic}}" height="75"></td>
         <td>{{x.subcatid}}</td>
         <td>{{x.pname}}</td>
         <td><input type="button" name="b1" value="update" (click)="onprodupdate(x)"></td>

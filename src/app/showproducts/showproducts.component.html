@@ -15,7 +15,7 @@
 <div class="col-md-3 product-grids"> 
   <div class="agile-products" align="center" (mouseenter)="calc(x,i)" (mouseleave)="left()">
     <div class="new-tag"><h6>{{x.pdiscount}}%<br>Off</h6></div>
-    <a routerLink="/productdetails" [queryParams]="{pid:x._id}"><img src="uploads/{{x.spic}}" height="150px" class="img-responsive" >
+    <a routerLink="/productdetails" [queryParams]="{pid:x._id}"><img src="dist/eCommerceProj/uploads/{{x.spic}}" height="150px" class="img-responsive" >
     <div class="agile-product-text">              
       <h5>{{x.pname}}</h5> 
       <div *ngIf="x" (onCreate)="tr(i)"> 

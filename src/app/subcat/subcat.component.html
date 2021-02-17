@@ -14,7 +14,7 @@
         </select>
         <input type="text" class="user" name="scatname" placeholder="Enter Sub Category" required="" [(ngModel)]="scatname">
         <input type="file" name="scatpic" class="lock" (change)="fileselected($event)">
-        <div *ngIf="update"><img src="uploads/{{subcat.spic}} " height="50"></div>
+        <div *ngIf="update"><img src="dist/eCommerceProj/uploads/{{subcat.spic}} " height="50"></div>
         <input type="submit" value="Add" name="bt" (click)="onscatadd()">
         <div *ngIf="update"><input type="submit" value="Update" name="bt2" (click)="updatesubcat()"></div>
         <br/>
@@ -31,7 +31,7 @@
             <th>Delete</th>
         </tr>
         <tr *ngFor="let x of allsubcat">
-          <td><img src="uploads/{{x.spic}}" height="75"></td>
+          <td><img src="dist/eCommerceProj/uploads/{{x.spic}}" height="75"></td>
           <td>{{x.subcatname}}</td>
           <td><input type="button" name="b1" value="update" (click)="onsubcatupdate(x)"></td>
           <td><input type="button" name="b2" value="delete" (click)="onsubcatdel(x)"></td>
