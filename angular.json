@@ -25,7 +25,8 @@
               "src/fonts",
               "src/images",
               "src/js",
-              "src/uploads"
+              "src/uploads",
+              ""
             ],
             "styles": [
               "src/styles.css"
