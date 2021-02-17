@@ -100,14 +100,14 @@ app.post("/api/signup",cors(),async function(req, res) {
  {
  console.log(err);
  res.send("Error while signing up, try again (try using different username)");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  res.send("Signup Successfull");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 app.post("/api/adminsignup",cors(),async function(req, res) {
@@ -121,14 +121,14 @@ app.post("/api/adminsignup",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Error while signing up, try again");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
 	else
 	{
 	res.send("Signup Successfull");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    });
    
@@ -142,15 +142,15 @@ app.post("/api/login",cors(), async function(req, res) {
  {
  console.log(err);
  res.send(err);
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send(data);
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -162,14 +162,14 @@ app.put("/api/updatestatus",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
 	else
 	{
 	res.send("Successfully Updated");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    });
 
@@ -184,14 +184,14 @@ app.put("/updatecat", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
  else
  {
  res.send("Successfully Updated");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -207,15 +207,15 @@ app.delete("/deletecat", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send("Successfully Deleted");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 app.post("/api/addcat",upload.single('photo'),cors(),async function(req, res) 
@@ -233,14 +233,14 @@ app.post("/api/addcat",upload.single('photo'),cors(),async function(req, res)
  {
  console.log(err);
  res.send("Failed");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  res.send("Successfully Inserted");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -261,14 +261,14 @@ app.post("/api/managesubcat",upload.single('photo'),cors(),async function(req, r
  {
  console.log(err);
  res.send("Failed");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  res.send("Successfully Inserted");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -280,15 +280,15 @@ app.get("/api/fetchsubcat",cors(),async function(req,res){
 		{
 			console.log(err);
 			res.send("FAILED");
-			//mongoose.connection.close();
+			////mongoose.connection.close();
 		}
 		else
 		{
 			console.log(data);
 			res.send(data);
-			//mongoose.connection.close();
+			////mongoose.connection.close();
 		}
-		mongoose.connection.close();
+		//mongoose.connection.close();
 	});
 }catch (error) {
     console.log(error)
@@ -305,15 +305,15 @@ app.delete("/deletesubcat", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send("Successfully Deleted");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 //update sub-categories
@@ -341,14 +341,14 @@ app.put("/updatesubcat", upload.single('photo'),function(req, res) {
  {
  console.log(err);
  res.send("Failed");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  res.send("Successfully Updated");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -368,15 +368,15 @@ app.delete("/api/delprod",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
 	else
 	{
 	console.log(data);
 	res.send("Successfully Deleted");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    });
 
@@ -397,15 +397,15 @@ app.delete("/api/delprod",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
 	else
 	{
 	console.log(data);
 	res.send("Successfully Deleted");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    });
 
@@ -425,15 +425,15 @@ app.delete("/api/delprod",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
 	else
 	{
 	console.log(data);
 	res.send("Successfully Deleted");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    });
 
@@ -446,15 +446,15 @@ app.delete("/api/removecartitems",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
 	else
 	{
 	console.log(data);
 	res.send("Successfully Deleted");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    });
 
@@ -473,14 +473,14 @@ app.post("/api/manageprod" ,upload.single('photo'),cors(),async function(req, re
  {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
  else
  {
  res.send("Product added successfully");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -508,14 +508,14 @@ app.put("/api/updateprod", upload.single('photo'),cors(),async function(req, res
 	{
 	console.log(err);
 	res.send("Failed");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
 	else
 	{
 	res.send("Successfully Updated");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    });
 
@@ -544,14 +544,14 @@ app.put("/api/updateprod", upload.single('photo'),cors(),async function(req, res
 	{
 	console.log(err);
 	res.send("Failed");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
 	else
 	{
 	res.send("Successfully Updated");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    });
 
@@ -579,14 +579,14 @@ app.put("/api/updateprod", upload.single('photo'),cors(),async function(req, res
 	{
 	console.log(err);
 	res.send("Failed");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
 	else
 	{
 	res.send("Successfully Updated");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    });
 
@@ -601,14 +601,14 @@ app.post("/api/addcart" ,cors(),async function(req, res) {
  {
  console.log(err);
  res.send("Error while adding to cart, try again");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  res.send("Product added to cart successfully");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -620,15 +620,15 @@ app.put("/api/updatecart",cors(),async function(req, res) {
 		{
 		 console.log(err);
 		 res.send("Failed");
-	//	 mongoose.connection.close();
+	//	 //mongoose.connection.close();
 		}
 		else
 		{
 		 console.log("cart updated");
 		 //res.send("Successfully Deleted");
-	//	 mongoose.connection.close();
+	//	 //mongoose.connection.close();
 		}
-		mongoose.connection.close();
+		//mongoose.connection.close();
 	});
 });
 
@@ -644,15 +644,15 @@ app.get("/api/getcart",cors(),async function(req, res) {
  {
  console.log(err);
  res.send("Failed");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send(data);
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -668,15 +668,15 @@ app.delete("/deletecardprod", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send("Successfully Deleted");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -688,15 +688,15 @@ app.get("/api/getordernum",cors(),async function(req, res) {
  {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send(data);
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  }).sort({"odate":-1});
 });
 
@@ -708,15 +708,15 @@ app.get("/api/getcartprods",cors(),async function(req, res) {
  {
  console.log(err);
  res.send("Failed");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send(data);
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 app.get("/api/checkcartprods",cors(),async function(req, res) {
@@ -726,15 +726,15 @@ app.get("/api/checkcartprods",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
 	else
 	{
 	console.log(data);
 	res.send(data);
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    });
 
@@ -748,13 +748,13 @@ var neworder=req.body;
 order.insertMany(neworder, function (err, docs) {
  if (err){ 
  return console.error(err);
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  } else {
  console.log("Multiple documents inserted to Collection");
 res.send("Successfully inserted");
-//mongoose.connection.close();
+////mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -769,15 +769,15 @@ app.post("/api/checkout",cors(),async function(req, res) {
 	  {
 		console.log(err);
 		res.send("Error while signing up, try again");
-	//	mongoose.connection.close();
+	//	//mongoose.connection.close();
 	  }
 	  else
 	  {
 		  console.log("ok");
 		res.send("ok");
-	//	mongoose.connection.close();
+	//	//mongoose.connection.close();
 	  }
-	  mongoose.connection.close();
+	  //mongoose.connection.close();
 	});
   });
 
@@ -794,18 +794,18 @@ if (err)
 {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
 }
 else
 {
  console.log("successful updation of stock"+data);
  //res.send("Successfully Deleted");
-// mongoose.connection.close();
+// //mongoose.connection.close();
 }
 
 });
 }
-mongoose.connection.close();
+//mongoose.connection.close();
 });
 
 
@@ -818,15 +818,15 @@ app.delete("/api/emptycart",cors(),async function(req, res) {
  {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send("removed to cart successfully");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 app.get("/getproductdetailbypid", function(req, res) {
@@ -836,15 +836,15 @@ app.get("/getproductdetailbypid", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send(data);
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -859,15 +859,15 @@ app.get("/getsubcat", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
- //mongoose.connection.close();
+ ////mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send(data);
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -882,15 +882,15 @@ app.get("/getprodsbysubcat", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send(data);
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -904,15 +904,15 @@ app.get("/getprodsbyquery", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send(data);
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -927,15 +927,15 @@ app.delete("/deleteuser", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send("Successfully Deleted");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -947,14 +947,14 @@ app.get("/fetchuserbyun", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
  else
  {
  res.send(data);
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -967,14 +967,14 @@ app.get("/api/fetchorders",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
 	else
 	{
 	res.send(data);
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    }catch (error) {
     console.log(error)
@@ -989,14 +989,14 @@ app.get("/api/fetchorders",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
 	else
 	{
 	res.send(data);
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    }catch (error) {
     console.log(error)
@@ -1010,15 +1010,15 @@ app.get("/fetchusers", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send(data);
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 app.get("/api/fetchprod", function(req, res) {
@@ -1028,15 +1028,15 @@ app.get("/api/fetchprod", function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
 	else
 	{
 	console.log(data);
 	res.send(data);
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    });
 
@@ -1047,15 +1047,15 @@ app.get("/api/fetchprod", function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
 	else
 	{
 	console.log(data);
 	res.send(data);
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    }catch (error) {
     console.log(error)
@@ -1068,15 +1068,15 @@ app.get("/api/listmembers",cors(),async function(req,res){
 	{
 		console.log(err);
 		res.send(err);
-	//	mongoose.connection.close();
+	//	//mongoose.connection.close();
 	}
 	else
 	{
 		console.log(data);
 		res.send(data);
-	//	mongoose.connection.close();
+	//	//mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	})
 	})
 app.get("/api/fetchcat",cors(),async function(req, res) {
@@ -1086,15 +1086,15 @@ app.get("/api/fetchcat",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
 	else
 	{
 	console.log(data);
 	res.send(data);
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	})
    }catch (error) {
     console.log(error)
@@ -1107,15 +1107,15 @@ app.get("/api/fetchproducts",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
 	else
 	{
 	console.log(data);
 	res.send(data);
-//	mongoose.connection.close();
+//	//mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    }catch (error) {
     console.log(error)
@@ -1129,15 +1129,15 @@ app.get("/getallcategories", function(req, res) {
  {
  console.log(err);
  res.send("Failed");
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
  else
  {
  console.log(data);
  res.send(data);
-// mongoose.connection.close();
+// //mongoose.connection.close();
  }
- mongoose.connection.close();
+ //mongoose.connection.close();
  });
 });
 
@@ -1152,14 +1152,14 @@ app.delete("/api/deluser",cors(),async function(req,res){
 		{
 			console.log(err);
 			res.send("Failed");
-	//		mongoose.connection.close();
+	//		//mongoose.connection.close();
 		}
 		else{
 			console.log(data);
 			res.send(data);
-	//		mongoose.connection.close();
+	//		//mongoose.connection.close();
 		}
-		mongoose.connection.close();
+		//mongoose.connection.close();
 	});
 });
 
@@ -1171,14 +1171,14 @@ app.put("/api/changepass",cors(),async function(req,res){
 		{
 			console.log(err);
 			res.send("FAILED");
-		//	mongoose.connection.close();
+		//	//mongoose.connection.close();
 		}
 		else{
 			console.log(data);
 			res.send(data);
-		//	mongoose.connection.close();
+		//	//mongoose.connection.close();
 		}
-		mongoose.connection.close();
+		//mongoose.connection.close();
 	});
 });
 
@@ -1189,15 +1189,15 @@ app.get("/api/fetchprods",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
 	else
 	{
 	console.log(data);
 	res.send(data);
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    }catch (error) {
     console.log(error)
@@ -1211,15 +1211,15 @@ app.get("/api/fetchprods",cors(),async function(req, res) {
 	{
 	console.log(err);
 	res.send("Failed");
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
 	else
 	{
 	console.log(data);
 	res.send(data);
-	//mongoose.connection.close();
+	////mongoose.connection.close();
 	}
-	mongoose.connection.close();
+	//mongoose.connection.close();
 	});
    }catch (error) {
     console.log(error)
