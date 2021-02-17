@@ -1049,7 +1049,24 @@ app.get("/api/fetchprod", function(req, res) {
 	mongoose.connection.close();
 	});
    });
-
+app.get("/api/listmembers",cors(),async function(req,res){
+	mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
+	Signup.find({"usertype":"common"},function(err,data){
+	if(err)
+	{
+		console.log(err);
+		res.send(err);
+	//	mongoose.connection.close();
+	}
+	else
+	{
+		console.log(data);
+		res.send(data);
+	//	mongoose.connection.close();
+	}
+	mongoose.connection.close();
+	})
+	})
 app.get("/api/fetchcat",cors(),async function(req, res) {
 	mongoose.connect("	mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 	managecat.find(function(err, data) {
@@ -1066,8 +1083,8 @@ app.get("/api/fetchcat",cors(),async function(req, res) {
 //	mongoose.connection.close();
 	}
 	mongoose.connection.close();
-	});
-   });
+	})
+   })
 app.get("/api/fetchproducts",cors(),async function(req, res) {
 	mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 	manageproduct.find(function(err, data) {
@@ -1106,24 +1123,7 @@ app.get("/getallcategories", function(req, res) {
  });
 });
 
-app.get("/api/listmembers",cors(),async function(req,res){
-mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
-Signup.find({"usertype":"common"},function(err,data){
-if(err)
-{
-	console.log(err);
-	res.send(err);
-//	mongoose.connection.close();
-}
-else
-{
-	console.log(data);
-	res.send(data);
-//	mongoose.connection.close();
-}
-mongoose.connection.close();
-})
-})
+
 
 app.delete("/api/deluser",cors(),async function(req,res){
 	mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
