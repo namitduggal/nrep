@@ -273,7 +273,7 @@ app.post("/api/managesubcat",upload.single('photo'),cors(),async function(req, r
 });
 
 app.get("/api/fetchsubcat",cors(),async function(req,res){
-	mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
+	try{mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 	managesubcat.find({catid:req.query.cid},function(err,data)
 	{
 		if(err)
@@ -290,6 +290,9 @@ app.get("/api/fetchsubcat",cors(),async function(req,res){
 		}
 		mongoose.connection.close();
 	});
+}catch (error) {
+    console.log(error)
+  }
 });
 //for delete sub- category using managecat component
 app.delete("/deletesubcat", function(req, res) {
@@ -957,7 +960,7 @@ app.get("/fetchuserbyun", function(req, res) {
 
 
 app.get("/api/fetchorders",cors(),async function(req, res) {
-	mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
+	try{mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 	console.log(req.query.uname);
 	checkout.find({ username: req.query.uname}, function(err, data) {
 	if (err)
@@ -973,11 +976,14 @@ app.get("/api/fetchorders",cors(),async function(req, res) {
 	}
 	mongoose.connection.close();
 	});
-   });
+   }catch (error) {
+    console.log(error)
+  }
+});
 
 
    app.get("/api/fetchallorders",cors(),async function(req, res) {
-	mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
+	try{mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 	checkout.find(function(err, data) {
 	if (err)
 	{
@@ -992,7 +998,10 @@ app.get("/api/fetchorders",cors(),async function(req, res) {
 	}
 	mongoose.connection.close();
 	});
-   });
+   }catch (error) {
+    console.log(error)
+  }
+});
 
 app.get("/fetchusers", function(req, res) {
  mongoose.connect("mongodb://localhost/projdb",{useNewUrlParser: true});
@@ -1032,7 +1041,7 @@ app.get("/api/fetchprod", function(req, res) {
    });
 
    app.get("/api/fetchprodbyname",cors(),async function(req, res) {
-	mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
+	try{mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 	manageproduct.find({pname: { $regex: '.*' + req.query.pname ,$options:'i' }} ,function(err, data) {
 	if (err)
 	{
@@ -1048,7 +1057,10 @@ app.get("/api/fetchprod", function(req, res) {
 	}
 	mongoose.connection.close();
 	});
-   });
+   }catch (error) {
+    console.log(error)
+  }
+});
 app.get("/api/listmembers",cors(),async function(req,res){
 	mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 	Signup.find({"usertype":"common"},function(err,data){
@@ -1068,7 +1080,7 @@ app.get("/api/listmembers",cors(),async function(req,res){
 	})
 	})
 app.get("/api/fetchcat",cors(),async function(req, res) {
-	mongoose.connect("	mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
+	try {mongoose.connect("	mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 	managecat.find(function(err, data) {
 	if (err)
 	{
@@ -1084,9 +1096,12 @@ app.get("/api/fetchcat",cors(),async function(req, res) {
 	}
 	mongoose.connection.close();
 	})
-   })
+   }catch (error) {
+    console.log(error)
+  }
+})
 app.get("/api/fetchproducts",cors(),async function(req, res) {
-	mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
+	try{mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 	manageproduct.find(function(err, data) {
 	if (err)
 	{
@@ -1102,7 +1117,10 @@ app.get("/api/fetchproducts",cors(),async function(req, res) {
 	}
 	mongoose.connection.close();
 	});
-   });
+   }catch (error) {
+    console.log(error)
+  }
+});
 
 app.get("/getallcategories", function(req, res) {
  mongoose.connect("mongodb://localhost/projdb",{useNewUrlParser: true});
@@ -1165,7 +1183,7 @@ app.put("/api/changepass",cors(),async function(req,res){
 });
 
 app.get("/api/fetchprods",cors(),async function(req, res) {
-	mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
+	try{mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 	manageproduct.find({catid:req.query.catid,subcatid:req.query.scatid},function(err, data) {
 	if (err)
 	{
@@ -1181,10 +1199,13 @@ app.get("/api/fetchprods",cors(),async function(req, res) {
 	}
 	mongoose.connection.close();
 	});
-   });
+   }catch (error) {
+    console.log(error)
+  }
+});
 
    app.get("/api/fetchprodsbyid",cors(),async function(req, res) {
-	mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
+	try{mongoose.connect("mongodb+srv://namit:namit123@cluster0.xmfxn.mongodb.net/myprojdb?retryWrites=true&w=majority",{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 	manageproduct.find({_id:req.query.pid},function(err, data) {
 	if (err)
 	{
@@ -1200,7 +1221,10 @@ app.get("/api/fetchprods",cors(),async function(req, res) {
 	}
 	mongoose.connection.close();
 	});
-   });
+   }catch (error) {
+    console.log(error)
+  }
+});
 
 app.listen(port,()=>{
 	console.log("listening to "+ port);
