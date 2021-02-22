@@ -39,7 +39,7 @@
           <th>Delete</th>
       </tr>
       <tr *ngFor="let x of prodlist">
-        <td><img src="dist/eCommerceProj/uploads/{{x.spic}}" height="75"></td>
+        <td><img src="uploads/{{x.spic}}" height="75"></td>
         <td>{{x.subcatid}}</td>
         <td>{{x.pname}}</td>
         <td><input type="button" name="b1" value="update" (click)="onprodupdate(x)"></td>
